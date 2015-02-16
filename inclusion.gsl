@@ -1,0 +1,22 @@
+.template 0
+
+function global.inclusion__process(context)
+  my.context ?= project
+  
+  my.found = 1
+  while my.found
+    my.found = 0
+    for my.context.include as i
+      log('include file "$(i.file:).xml"')
+      xml to my.context from "$(i.file:).xml"
+      delete i
+      my.found = 1
+    endfor
+  endwhile
+
+  for my.context. as ii where ii.name()?"include" <> "include"
+    inclusion__process(ii)
+  endfor
+endfunction
+
+.endtemplate
