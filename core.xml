@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 
-<core name="inclusion" branch="master">
+<core name="inclusion" branch="master" description="4i core library handling XML file inclusion">
   <function name="process_inclusion"/>
 </core>
