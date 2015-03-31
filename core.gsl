@@ -25,7 +25,7 @@ function global.inclusion__process(context)
     my.found = 0
     for my.context.include as i
       log('include file "$(i.file:).xml"')
-      xml to my.context from "$(i.file:).xml"
+      xml to my.context from "$(project_path:)$(i.file:).xml"
       delete i
       my.found = 1
     endfor
